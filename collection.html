@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="collection.css">
+    <script src="script.js"></script>
 </head>
 <body>
      <!-- <h1>Home Page</h1> -->
@@ -12,7 +13,7 @@
         <div class="collection">
             <label for="date-of-birth">
                 Date
-                <input type="date" name="Date">
+                <p id="dateTime"></p>
             </label>
             </div>
             <br>
@@ -51,5 +52,21 @@
             <button type="submit">OK</button>
         </div>
     </section>
+
+    <script>
+        function updateDateTime() {
+            const dateTimeElement = document.getElementById('dateTime');
+            const now = new Date();
+            const formattedDateTime = now.toLocaleString();
+            dateTimeElement.textContent = `Current Date and Time: ${formattedDateTime}`;
+        }
+
+       
+        window.onload = updateDateTime;
+
+        setInterval(updateDateTime, 1000);
+    </script>
+
+    
 </body>
 </html>
